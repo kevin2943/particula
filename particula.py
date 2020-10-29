@@ -25,3 +25,16 @@ class Particula:
         string+= f'Azul: {self.blue}\n'
         string+= f'Distancia: {self.distancia}\n'
         return string
+
+    def to_dic(self):
+        return {
+            "id": self.id,
+            "origen_x": self.origen_x,
+            "origen_y": self.origen_y,
+            "destino_x": self.destino_x,
+            "destino_y": self.destino_y,
+            "velocidad": self.velocidad,
+            "red": self.red,
+            "green": self.green,
+            "blue": self.blue,
+        }
