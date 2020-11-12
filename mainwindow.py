@@ -1,6 +1,7 @@
 """Clase principal"""
-from PySide2.QtWidgets import QMainWindow, QFileDialog, QMessageBox, QTableWidgetItem
+from PySide2.QtWidgets import QMainWindow, QFileDialog, QMessageBox, QTableWidgetItem, QGraphicsScene
 from ui_mainwindow import Ui_MainWindow
+from PySide2.QtGui import QPen, QColor, QTransform
 from PySide2.QtCore import Slot
 from lista import Lista
 from particula import Particula
@@ -31,6 +32,11 @@ class MainWindow(QMainWindow):
 
         self.ui.table.setColumnCount(10)
         self.ui.table.setHorizontalHeaderLabels(headers)
+
+        self.scene = QGraphicsScene()
+        self.ui.graphicsView.setScene(self.scene)
+        self.ui.pushButton_draw.clicked.connect(self.draw)
+        self.ui.pushButton_clean.clicked.connect(self.clear)
 
     def readInputs(self):
         Id = self.ui.spinBox_id.value()
@@ -163,3 +169,23 @@ class MainWindow(QMainWindow):
                 row, 8, QTableWidgetItem(str(particula.green)))
             self.ui.table.setItem(
                 row, 9, QTableWidgetItem(str(particula.blue)))
+
+    @Slot()
+    def draw(self):
+        pen = QPen()
+        pen.setWidth(2)
+
+        for particula in self.lista:
+            color = QColor(particula.red, particula.green, particula.blue)
+            pen.setColor(color)
+
+            self.scene.addEllipse(particula.origen_x,
+                                  particula.origen_y, 3, 3, pen)
+            self.scene.addEllipse(particula.destino_x,
+                                  particula.destino_y, 3, 3, pen)
+            self.scene.addLine(particula.origen_x+3, particula.origen_y+3,
+                               particula.destino_x, particula.destino_y, pen)
+
+    @Slot()
+    def clear(self):
+        self.scene.clear()
