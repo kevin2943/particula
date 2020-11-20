@@ -49,3 +49,6 @@ class Lista:
             return particula
         else:
             raise StopIteration
+
+    def sort(self, key, reverse=False):
+        self.__particulas.sort(key=key, reverse=reverse)

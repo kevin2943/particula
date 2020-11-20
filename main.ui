@@ -269,7 +269,16 @@
     <addaction name="actionAbrir"/>
     <addaction name="actionGuardar"/>
    </widget>
+   <widget class="QMenu" name="menuOrdenar">
+    <property name="title">
+     <string>Ordenar</string>
+    </property>
+    <addaction name="actionid_ascendente"/>
+    <addaction name="actionDistancia_descendente"/>
+    <addaction name="actionVelocidad_ascendente"/>
+   </widget>
    <addaction name="menuArchivo"/>
+   <addaction name="menuOrdenar"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionAbrir">
@@ -286,6 +295,21 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionid_ascendente">
+   <property name="text">
+    <string>id (ascendente)</string>
+   </property>
+  </action>
+  <action name="actionDistancia_descendente">
+   <property name="text">
+    <string>Distancia (descendente)</string>
+   </property>
+  </action>
+  <action name="actionVelocidad_ascendente">
+   <property name="text">
+    <string>Velocidad (ascendente)</string>
    </property>
   </action>
  </widget>

@@ -38,6 +38,11 @@ class MainWindow(QMainWindow):
         self.ui.pushButton_draw.clicked.connect(self.draw)
         self.ui.pushButton_clean.clicked.connect(self.clear)
 
+
+        self.ui.actionid_ascendente.triggered.connect(self.sortById)
+        self.ui.actionDistancia_descendente.triggered.connect(self.sortByDistance)
+        self.ui.actionVelocidad_ascendente.triggered.connect(self.sortBySpeed)
+
     def readInputs(self):
         Id = self.ui.spinBox_id.value()
         xOrigin = self.ui.spinBox_xOrigin.value()
@@ -189,3 +194,15 @@ class MainWindow(QMainWindow):
     @Slot()
     def clear(self):
         self.scene.clear()
+
+    @Slot()
+    def sortById(self):
+        self.lista.sort(key=lambda particula: particula.id)
+
+    @Slot()
+    def sortByDistance(self):
+        self.lista.sort(key=lambda particula: particula.distancia, reverse= True)
+
+    @Slot()
+    def sortBySpeed(self):
+        self.lista.sort(key=lambda particula: particula.velocidad)
