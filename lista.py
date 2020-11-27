@@ -52,3 +52,19 @@ class Lista:
 
     def sort(self, key, reverse=False):
         self.__particulas.sort(key=key, reverse=reverse)
+
+    def getGraph(self):
+        g = dict()
+        for i in self.__particulas:
+            u = ((i.origen_x, i.origen_y), i.distancia)
+            v = ((i.destino_x, i.destino_y), i.distancia)
+            if u[0] in g:
+                g[u[0]].append(v)
+            else:
+                g[u[0]] = [v]
+
+            if v[0] in g:
+                g[v[0]].append(u)
+            else:
+                g[v[0]] = [u]
+        return g

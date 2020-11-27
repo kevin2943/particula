@@ -5,6 +5,7 @@ from PySide2.QtGui import QPen, QColor, QTransform
 from PySide2.QtCore import Slot
 from lista import Lista
 from particula import Particula
+from pprint import pformat
 
 
 class MainWindow(QMainWindow):
@@ -71,7 +72,9 @@ class MainWindow(QMainWindow):
     @Slot()
     def click_show(self):
         self.ui.plainTextEdit.clear()
-        self.ui.plainTextEdit.insertPlainText(str(self.lista))
+        grafo = pformat(self.lista.getGraph(), width=40, indent=1)
+        lista = str(self.lista)
+        self.ui.plainTextEdit.insertPlainText(f'{lista} \n Grafo:\n{grafo}')
 
     @Slot()
     def action_abrir(self):
