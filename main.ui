@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>523</width>
-    <height>456</height>
+    <width>547</width>
+    <height>485</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -34,10 +34,17 @@
            <string>Partícula</string>
           </property>
           <layout class="QGridLayout" name="gridLayout_2" columnstretch="0,0">
-           <item row="3" column="0">
-            <widget class="QLabel" name="label_4">
+           <item row="1" column="1">
+            <widget class="QSpinBox" name="spinBox_xOrigin">
+             <property name="maximum">
+              <number>500</number>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_5">
              <property name="text">
-              <string>Destino x</string>
+              <string>Destino y</string>
              </property>
             </widget>
            </item>
@@ -69,24 +76,23 @@
              </property>
             </widget>
            </item>
-           <item row="7" column="1">
-            <widget class="QPushButton" name="pushButton_addEnd">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label">
              <property name="text">
-              <string>Agregar al final</string>
+              <string>Id</string>
              </property>
             </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="spinBox_id"/>
+           </item>
+           <item row="5" column="1">
+            <widget class="QSpinBox" name="spinBox_speed"/>
            </item>
            <item row="2" column="1">
             <widget class="QSpinBox" name="spinBox_yOrigin">
              <property name="maximum">
               <number>500</number>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="0">
-            <widget class="QLabel" name="label">
-             <property name="text">
-              <string>Id</string>
              </property>
             </widget>
            </item>
@@ -97,13 +103,31 @@
              </property>
             </widget>
            </item>
-           <item row="0" column="1">
-            <widget class="QSpinBox" name="spinBox_id"/>
-           </item>
-           <item row="1" column="1">
-            <widget class="QSpinBox" name="spinBox_xOrigin">
+           <item row="4" column="1">
+            <widget class="QSpinBox" name="spinBox_yDestiny">
              <property name="maximum">
               <number>500</number>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_4">
+             <property name="text">
+              <string>Destino x</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="1">
+            <widget class="QPushButton" name="pushButton_addEnd">
+             <property name="text">
+              <string>Agregar al final</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="0">
+            <widget class="QPushButton" name="pushButton_addStart">
+             <property name="text">
+              <string>Agregar al inicio</string>
              </property>
             </widget>
            </item>
@@ -158,27 +182,10 @@
              </layout>
             </widget>
            </item>
-           <item row="4" column="1">
-            <widget class="QSpinBox" name="spinBox_yDestiny">
-             <property name="maximum">
-              <number>500</number>
-             </property>
-            </widget>
-           </item>
-           <item row="4" column="0">
-            <widget class="QLabel" name="label_5">
+           <item row="9" column="0" colspan="2">
+            <widget class="QPushButton" name="push_recorrido">
              <property name="text">
-              <string>Destino y</string>
-             </property>
-            </widget>
-           </item>
-           <item row="5" column="1">
-            <widget class="QSpinBox" name="spinBox_speed"/>
-           </item>
-           <item row="7" column="0">
-            <widget class="QPushButton" name="pushButton_addStart">
-             <property name="text">
-              <string>Agregar al inicio</string>
+              <string>Recorrido profundidad/amplitud</string>
              </property>
             </widget>
            </item>
@@ -258,7 +265,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>523</width>
+     <width>547</width>
      <height>21</height>
     </rect>
    </property>

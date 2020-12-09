@@ -6,6 +6,7 @@ from PySide2.QtCore import Slot
 from lista import Lista
 from particula import Particula
 from pprint import pformat
+from algoritmos import depth_search, breadth_search
 
 
 class MainWindow(QMainWindow):
@@ -39,6 +40,7 @@ class MainWindow(QMainWindow):
         self.ui.pushButton_draw.clicked.connect(self.draw)
         self.ui.pushButton_clean.clicked.connect(self.clear)
 
+        self.ui.push_recorrido.clicked.connect(self.click_recorrido)
 
         self.ui.actionid_ascendente.triggered.connect(self.sortById)
         self.ui.actionDistancia_descendente.triggered.connect(self.sortByDistance)
@@ -209,3 +211,14 @@ class MainWindow(QMainWindow):
     @Slot()
     def sortBySpeed(self):
         self.lista.sort(key=lambda particula: particula.velocidad)
+
+    @Slot()
+    def click_recorrido(self):
+        origen_x = self.ui.spinBox_xOrigin.value()
+        origen_y = self.ui.spinBox_yOrigin.value()
+        start = (origen_x, origen_y)
+        graph = self.lista.getGraph()
+        print("Profundidad:")
+        print(pformat(depth_search(graph, start), width=40, indent=1))
+        print("\nAmplitud:")
+        print(pformat(breadth_search(graph, start), width=40, indent=1))

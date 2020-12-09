@@ -17,7 +17,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(523, 456)
+        MainWindow.resize(547, 485)
         self.actionAbrir = QAction(MainWindow)
         self.actionAbrir.setObjectName(u"actionAbrir")
         self.actionGuardar = QAction(MainWindow)
@@ -43,10 +43,16 @@ class Ui_MainWindow(object):
         self.groupBox_2.setEnabled(True)
         self.gridLayout_2 = QGridLayout(self.groupBox_2)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.label_4 = QLabel(self.groupBox_2)
-        self.label_4.setObjectName(u"label_4")
+        self.spinBox_xOrigin = QSpinBox(self.groupBox_2)
+        self.spinBox_xOrigin.setObjectName(u"spinBox_xOrigin")
+        self.spinBox_xOrigin.setMaximum(500)
 
-        self.gridLayout_2.addWidget(self.label_4, 3, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.spinBox_xOrigin, 1, 1, 1, 1)
+
+        self.label_5 = QLabel(self.groupBox_2)
+        self.label_5.setObjectName(u"label_5")
+
+        self.gridLayout_2.addWidget(self.label_5, 4, 0, 1, 1)
 
         self.label_2 = QLabel(self.groupBox_2)
         self.label_2.setObjectName(u"label_2")
@@ -69,10 +75,20 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.label_3, 2, 0, 1, 1)
 
-        self.pushButton_addEnd = QPushButton(self.groupBox_2)
-        self.pushButton_addEnd.setObjectName(u"pushButton_addEnd")
+        self.label = QLabel(self.groupBox_2)
+        self.label.setObjectName(u"label")
 
-        self.gridLayout_2.addWidget(self.pushButton_addEnd, 7, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.label, 0, 0, 1, 1)
+
+        self.spinBox_id = QSpinBox(self.groupBox_2)
+        self.spinBox_id.setObjectName(u"spinBox_id")
+
+        self.gridLayout_2.addWidget(self.spinBox_id, 0, 1, 1, 1)
+
+        self.spinBox_speed = QSpinBox(self.groupBox_2)
+        self.spinBox_speed.setObjectName(u"spinBox_speed")
+
+        self.gridLayout_2.addWidget(self.spinBox_speed, 5, 1, 1, 1)
 
         self.spinBox_yOrigin = QSpinBox(self.groupBox_2)
         self.spinBox_yOrigin.setObjectName(u"spinBox_yOrigin")
@@ -80,26 +96,31 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.spinBox_yOrigin, 2, 1, 1, 1)
 
-        self.label = QLabel(self.groupBox_2)
-        self.label.setObjectName(u"label")
-
-        self.gridLayout_2.addWidget(self.label, 0, 0, 1, 1)
-
         self.pushButton_show = QPushButton(self.groupBox_2)
         self.pushButton_show.setObjectName(u"pushButton_show")
 
         self.gridLayout_2.addWidget(self.pushButton_show, 8, 0, 1, 2)
 
-        self.spinBox_id = QSpinBox(self.groupBox_2)
-        self.spinBox_id.setObjectName(u"spinBox_id")
+        self.spinBox_yDestiny = QSpinBox(self.groupBox_2)
+        self.spinBox_yDestiny.setObjectName(u"spinBox_yDestiny")
+        self.spinBox_yDestiny.setMaximum(500)
 
-        self.gridLayout_2.addWidget(self.spinBox_id, 0, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.spinBox_yDestiny, 4, 1, 1, 1)
 
-        self.spinBox_xOrigin = QSpinBox(self.groupBox_2)
-        self.spinBox_xOrigin.setObjectName(u"spinBox_xOrigin")
-        self.spinBox_xOrigin.setMaximum(500)
+        self.label_4 = QLabel(self.groupBox_2)
+        self.label_4.setObjectName(u"label_4")
 
-        self.gridLayout_2.addWidget(self.spinBox_xOrigin, 1, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.label_4, 3, 0, 1, 1)
+
+        self.pushButton_addEnd = QPushButton(self.groupBox_2)
+        self.pushButton_addEnd.setObjectName(u"pushButton_addEnd")
+
+        self.gridLayout_2.addWidget(self.pushButton_addEnd, 7, 1, 1, 1)
+
+        self.pushButton_addStart = QPushButton(self.groupBox_2)
+        self.pushButton_addStart.setObjectName(u"pushButton_addStart")
+
+        self.gridLayout_2.addWidget(self.pushButton_addStart, 7, 0, 1, 1)
 
         self.groupBox = QGroupBox(self.groupBox_2)
         self.groupBox.setObjectName(u"groupBox")
@@ -141,26 +162,10 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.groupBox, 6, 0, 1, 2)
 
-        self.spinBox_yDestiny = QSpinBox(self.groupBox_2)
-        self.spinBox_yDestiny.setObjectName(u"spinBox_yDestiny")
-        self.spinBox_yDestiny.setMaximum(500)
+        self.push_recorrido = QPushButton(self.groupBox_2)
+        self.push_recorrido.setObjectName(u"push_recorrido")
 
-        self.gridLayout_2.addWidget(self.spinBox_yDestiny, 4, 1, 1, 1)
-
-        self.label_5 = QLabel(self.groupBox_2)
-        self.label_5.setObjectName(u"label_5")
-
-        self.gridLayout_2.addWidget(self.label_5, 4, 0, 1, 1)
-
-        self.spinBox_speed = QSpinBox(self.groupBox_2)
-        self.spinBox_speed.setObjectName(u"spinBox_speed")
-
-        self.gridLayout_2.addWidget(self.spinBox_speed, 5, 1, 1, 1)
-
-        self.pushButton_addStart = QPushButton(self.groupBox_2)
-        self.pushButton_addStart.setObjectName(u"pushButton_addStart")
-
-        self.gridLayout_2.addWidget(self.pushButton_addStart, 7, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.push_recorrido, 9, 0, 1, 2)
 
 
         self.gridLayout_6.addWidget(self.groupBox_2, 0, 0, 1, 1)
@@ -223,7 +228,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 523, 21))
+        self.menubar.setGeometry(QRect(0, 0, 547, 21))
         self.menuArchivo = QMenu(self.menubar)
         self.menuArchivo.setObjectName(u"menuArchivo")
         self.menuOrdenar = QMenu(self.menubar)
@@ -263,19 +268,20 @@ class Ui_MainWindow(object):
         self.actionDistancia_descendente.setText(QCoreApplication.translate("MainWindow", u"Distancia (descendente)", None))
         self.actionVelocidad_ascendente.setText(QCoreApplication.translate("MainWindow", u"Velocidad (ascendente)", None))
         self.groupBox_2.setTitle(QCoreApplication.translate("MainWindow", u"Part\u00edcula", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Destino x", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Destino y", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"Origen en x", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"Velocidad", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Origen en y", None))
-        self.pushButton_addEnd.setText(QCoreApplication.translate("MainWindow", u"Agregar al final", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Id", None))
         self.pushButton_show.setText(QCoreApplication.translate("MainWindow", u"Mostrar", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Destino x", None))
+        self.pushButton_addEnd.setText(QCoreApplication.translate("MainWindow", u"Agregar al final", None))
+        self.pushButton_addStart.setText(QCoreApplication.translate("MainWindow", u"Agregar al inicio", None))
         self.groupBox.setTitle(QCoreApplication.translate("MainWindow", u"Color", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"Red", None))
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"Green", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"Blue", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Destino y", None))
-        self.pushButton_addStart.setText(QCoreApplication.translate("MainWindow", u"Agregar al inicio", None))
+        self.push_recorrido.setText(QCoreApplication.translate("MainWindow", u"Recorrido profundidad/amplitud", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"Agregar", None))
         self.LineEdit_search.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Id de particula", None))
         self.pushButton_search.setText(QCoreApplication.translate("MainWindow", u"Buscar", None))
